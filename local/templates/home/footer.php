@@ -9,16 +9,43 @@ use Bitrix\Main\Page\Asset;
       <div class="row">
         <div class="col-lg-4">
           <div class="mb-5">
-            <h3 class="footer-heading mb-4">About HomeSpace</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque,
-              consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima
-              minus odio!</p>
+            <?$APPLICATION->IncludeComponent(
+                  "bitrix:main.include", 
+                  "", 
+                  array(
+                    "AREA_FILE-SHOW" => "file",
+                    "PATH" => "/include/footer-about.php",
+                    "EDIT_TEMPLATE" => "",
+                    "AREA_FILE-SUFFIX" => "inc",
+                    "AREA_FILE_SHOW" => "file"
+                  ),
+                  false
+                );?>
           </div>
 
 
 
         </div>
         <div class="col-lg-4 mb-5 mb-lg-0">
+        <?$APPLICATION->IncludeComponent(
+	"bitrix:menu", 
+	".default", 
+	array(
+		"ALLOW_MULTI_SELECT" => "N",
+		"CHILD_MENU_TYPE" => "left",
+		"DELAY" => "N",
+		"MAX_LEVEL" => "1",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MENU_CACHE_TIME" => "36000000",
+		"MENU_CACHE_TYPE" => "A",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"ROOT_MENU_TYPE" => "top",
+		"USE_EXT" => "N",
+		"COMPONENT_TEMPLATE" => ".default"
+	),
+	false
+);?>
           <div class="row mb-5">
             <div class="col-md-12">
               <h3 class="footer-heading mb-4">Navigations</h3>
@@ -45,14 +72,18 @@ use Bitrix\Main\Page\Asset;
         </div>
 
         <div class="col-lg-4 mb-5 mb-lg-0">
-          <h3 class="footer-heading mb-4">Follow Us</h3>
-
-          <div>
-            <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-            <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-            <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-            <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
-          </div>
+               <?$APPLICATION->IncludeComponent(
+                  "bitrix:main.include", 
+                  "", 
+                  array(
+                    "AREA_FILE-SHOW" => "file",
+                    "PATH" => "/include/footer-social-media.php",
+                    "EDIT_TEMPLATE" => "",
+                    "AREA_FILE-SUFFIX" => "inc",
+                    "AREA_FILE_SHOW" => "file"
+                  ),
+                  false
+                );?>
 
 
 
@@ -61,14 +92,18 @@ use Bitrix\Main\Page\Asset;
       </div>
       <div class="row pt-5 mt-5 text-center">
         <div class="col-md-12">
-          <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;</script>
-            <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with
-            <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com"
-              target="_blank">Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-          </p>
+        <?$APPLICATION->IncludeComponent(
+                  "bitrix:main.include", 
+                  "", 
+                  array(
+                    "AREA_FILE-SHOW" => "file",
+                    "PATH" => "/include/footer-copyright.php",
+                    "EDIT_TEMPLATE" => "",
+                    "AREA_FILE-SUFFIX" => "inc",
+                    "AREA_FILE_SHOW" => "file"
+                  ),
+                  false
+                );?>
         </div>
 
       </div>
@@ -78,28 +113,20 @@ use Bitrix\Main\Page\Asset;
   </div>
     <?
      
-      Asset::getInstance()->addJs("/local/templates/home/js/jquery-3.3.1.min.js");
-  
-      Asset::getInstance()->addJs("/local/templates/home/js/jquery-migrate-3.0.1.min.js");
-      Asset::getInstance()->addJs("/local/templates/home/js/jquery-ui.js");
-
-      Asset::getInstance()->addJs("/local/templates/home/js/popper.min.js");
-
-      Asset::getInstance()->addJs("/local/templates/home/js/bootstrap.min.js");
-      Asset::getInstance()->addJs("/local/templates/home/js/owl.carousel.min.js");
-      Asset::getInstance()->addJs("/local/templates/home/js/mediaelement-and-player.min.js");
-      Asset::getInstance()->addJs("/local/templates/home/js/jquery.stellar.min.js");
-      Asset::getInstance()->addJs("/local/templates/home/js/jquery.countdown.min.js");
-      Asset::getInstance()->addJs("/local/templates/home/js/jquery.countdown.min.js");
-
-      Asset::getInstance()->addJs("/local/templates/home/js/jquery.magnific-popup.min.js");
-      Asset::getInstance()->addJs("/local/templates/home/js/bootstrap-datepicker.min.js");
-      Asset::getInstance()->addJs("/local/templates/home/js/aos.js");
-      Asset::getInstance()->addJs("/local/templates/home/js/main.js");
-
-   
-      
-
+      Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/jquery-3.3.1.min.js");
+      Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/jquery-migrate-3.0.1.min.js");
+      Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/jquery-ui.js");
+      Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/popper.min.js");
+      Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/bootstrap.min.js");
+      Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/owl.carousel.min.js");
+      Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/mediaelement-and-player.min.js");
+      Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/jquery.stellar.min.js");
+      Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/jquery.countdown.min.js");
+      Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/jquery.countdown.min.js");
+      Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/jquery.magnific-popup.min.js");
+      Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/bootstrap-datepicker.min.js");
+      Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/aos.js");
+      Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/main.js");
     ?>
 
 </body>
