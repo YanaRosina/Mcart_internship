@@ -129,21 +129,24 @@
               <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#"
                   class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
                   <?$APPLICATION->IncludeComponent(
-                    "bitrix:menu",
-                    "",
-                    Array(
-                      "ALLOW_MULTI_SELECT" => "N",
-                      "CHILD_MENU_TYPE" => "left",
-                      "DELAY" => "N",
-                      "MAX_LEVEL" => "1",
-                      "MENU_CACHE_GET_VARS" => array(""),
-                      "MENU_CACHE_TIME" => "36000000",
-                      "MENU_CACHE_TYPE" => "A",
-                      "MENU_CACHE_USE_GROUPS" => "Y",
-                      "ROOT_MENU_TYPE" => "top",
-                      "USE_EXT" => "N"
-                    )
-                  );?>
+	"bitrix:menu", 
+	".default", 
+	array(
+		"ALLOW_MULTI_SELECT" => "N",
+		"CHILD_MENU_TYPE" => "left",
+		"DELAY" => "N",
+		"MAX_LEVEL" => "1",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MENU_CACHE_TIME" => "36000000",
+		"MENU_CACHE_TYPE" => "A",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"ROOT_MENU_TYPE" => "top",
+		"USE_EXT" => "N",
+		"COMPONENT_TEMPLATE" => ".default"
+	),
+	false
+);?>
               <ul class="site-menu js-clone-nav d-none d-lg-block">
                 <li class="active">
                   <a href="index.html">Home</a>

@@ -160,9 +160,9 @@ $APPLICATION->SetTitle("Мебельная компания");
 	".default", 
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"CACHE_GROUPS" => "Y",
-		"CACHE_TIME" => "3600000",
-		"CACHE_TYPE" => "A",
+		"CACHE_GROUPS" => "N",
+		"CACHE_TIME" => "",
+		"CACHE_TYPE" => "N",
 		"COMPONENT_TEMPLATE" => ".default",
 		"DETAIL_URL" => "",
 		"FIELD_CODE" => array(
@@ -486,7 +486,7 @@ $APPLICATION->SetTitle("Мебельная компания");
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"CACHE_GROUPS" => "N",
-		"CACHE_TIME" => "3600000",
+		"CACHE_TIME" => "60480",
 		"CACHE_TYPE" => "A",
 		"COMPONENT_TEMPLATE" => ".default",
 		"DETAIL_URL" => "",
