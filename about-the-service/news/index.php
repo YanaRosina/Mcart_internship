@@ -2,6 +2,26 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Новости");
 ?><?$APPLICATION->IncludeComponent(
+	"bitrix:menu",
+	"",
+	Array(
+		"ALLOW_MULTI_SELECT" => "N",
+		"CHILD_MENU_TYPE" => "left",
+		"DELAY" => "N",
+		"MAX_LEVEL" => "1",
+		"MENU_CACHE_GET_VARS" => array(""),
+		"MENU_CACHE_TIME" => "360000000",
+		"MENU_CACHE_TYPE" => "A",
+		"MENU_CACHE_USE_GROUPS" => "N",
+		"ROOT_MENU_TYPE" => "left",
+		"USE_EXT" => "N"
+	)
+);?>
+<div>
+ <br>
+</div>
+<div>
+	 <?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	".default", 
 	array(
@@ -34,7 +54,10 @@ $APPLICATION->SetTitle("Новости");
 		),
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
+		"DISPLAY_DATE" => "Y",
 		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
 		"DISPLAY_TOP_PAGER" => "N",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"IBLOCK_ID" => "1",
@@ -79,6 +102,7 @@ $APPLICATION->SetTitle("Новости");
 		"USE_REVIEW" => "N",
 		"USE_RSS" => "N",
 		"USE_SEARCH" => "N",
+		"USE_SHARE" => "N",
 		"COMPONENT_TEMPLATE" => ".default",
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
@@ -87,4 +111,5 @@ $APPLICATION->SetTitle("Новости");
 		)
 	),
 	false
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?>
+</div><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

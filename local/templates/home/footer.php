@@ -22,14 +22,11 @@ use Bitrix\Main\Page\Asset;
                   false
                 );?>
           </div>
-
-
-
         </div>
-        <div class="col-lg-4 mb-5 mb-lg-0">
+        <!-- <div class="col-lg-4 mb-5 mb-lg-0">  -->
         <?$APPLICATION->IncludeComponent(
 	"bitrix:menu", 
-	".default", 
+	"bottom_menu", 
 	array(
 		"ALLOW_MULTI_SELECT" => "N",
 		"CHILD_MENU_TYPE" => "left",
@@ -40,13 +37,13 @@ use Bitrix\Main\Page\Asset;
 		"MENU_CACHE_TIME" => "36000000",
 		"MENU_CACHE_TYPE" => "A",
 		"MENU_CACHE_USE_GROUPS" => "Y",
-		"ROOT_MENU_TYPE" => "top",
+		"ROOT_MENU_TYPE" => "bottom",
 		"USE_EXT" => "N",
-		"COMPONENT_TEMPLATE" => ".default"
+		"COMPONENT_TEMPLATE" => "bottom_menu"
 	),
 	false
 );?>
-          <div class="row mb-5">
+          <!-- <div class="row mb-5">
             <div class="col-md-12">
               <h3 class="footer-heading mb-4">Navigations</h3>
             </div>
@@ -69,7 +66,7 @@ use Bitrix\Main\Page\Asset;
           </div>
 
 
-        </div>
+        </div>  -->
 
         <div class="col-lg-4 mb-5 mb-lg-0">
                <?$APPLICATION->IncludeComponent(
