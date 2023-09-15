@@ -145,8 +145,22 @@
         false
     );?>
 
+        
+
         </div>
+
       </div>
     </div>
+    <?$APPLICATION->IncludeComponent(
+	"bitrix:breadcrumb", 
+	"navigation", 
+	array(
+		"PATH" => "",
+		"SITE_ID" => "s1",
+		"START_FROM" => "0",
+		"COMPONENT_TEMPLATE" => "navigation"
+	),
+	false
+);?>
   </div>
 

@@ -1,10 +1,10 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Мебельная компания");
-?>
-<div>
-	
-	<?$GLOBALS['arrFilter'] = array("=PROPERTY_PRIORITY_VALUE"=> "YES");
+$APPLICATION->SetPageProperty("title", "Биржа недвижимости");
+$APPLICATION->SetTitle("Биржа недвижимости");
+$APPLICATION->SetPageProperty("NOT_SHOW_NAV_CHAIN", "Y");
+?><div>
+	 <?$GLOBALS['arrFilter'] = array("=PROPERTY_PRIORITY_VALUE"=> "YES");
 	
 	$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
@@ -74,149 +74,110 @@ $APPLICATION->SetTitle("Мебельная компания");
 	),
 	false
 );?>
-
 	<div class="py-5">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-lg-4 mb-3 mb-lg-0">
-					<?$APPLICATION->IncludeComponent(
-						"bitrix:main.include", 
-						"", 
-						array(
-						"AREA_FILE-SHOW" => "file",
-						"PATH" => "/include/advantage1.php",
-						"EDIT_TEMPLATE" => "",
-						"AREA_FILE-SUFFIX" => "inc",
-						"AREA_FILE_SHOW" => "file"
-						),
-						false
-					);?>
+					 <?$APPLICATION->IncludeComponent(
+	"bitrix:main.include",
+	"",
+	Array(
+		"AREA_FILE-SHOW" => "file",
+		"AREA_FILE-SUFFIX" => "inc",
+		"AREA_FILE_SHOW" => "file",
+		"EDIT_TEMPLATE" => "",
+		"PATH" => "/include/advantage1.php"
+	)
+);?>
 				</div>
 				<div class="col-md-6 col-lg-4 mb-3 mb-lg-0">
-					<?$APPLICATION->IncludeComponent(
-						"bitrix:main.include", 
-						"", 
-						array(
-						"AREA_FILE-SHOW" => "file",
-						"PATH" => "/include/advantage2.php",
-						"EDIT_TEMPLATE" => "",
-						"AREA_FILE-SUFFIX" => "inc",
-						"AREA_FILE_SHOW" => "file"
-						),
-						false
-					);?>
+					 <?$APPLICATION->IncludeComponent(
+	"bitrix:main.include",
+	"",
+	Array(
+		"AREA_FILE-SHOW" => "file",
+		"AREA_FILE-SUFFIX" => "inc",
+		"AREA_FILE_SHOW" => "file",
+		"EDIT_TEMPLATE" => "",
+		"PATH" => "/include/advantage2.php"
+	)
+);?>
 				</div>
 				<div class="col-md-6 col-lg-4 mb-3 mb-lg-0">
-					<?$APPLICATION->IncludeComponent(
-						"bitrix:main.include", 
-						"", 
-						array(
-						"AREA_FILE-SHOW" => "file",
-						"PATH" => "/include/advantage3.php",
-						"EDIT_TEMPLATE" => "",
-						"AREA_FILE-SUFFIX" => "inc",
-						"AREA_FILE_SHOW" => "file"
-						),
-						false
-					);?>
+					 <?$APPLICATION->IncludeComponent(
+	"bitrix:main.include",
+	"",
+	Array(
+		"AREA_FILE-SHOW" => "file",
+		"AREA_FILE-SUFFIX" => "inc",
+		"AREA_FILE_SHOW" => "file",
+		"EDIT_TEMPLATE" => "",
+		"PATH" => "/include/advantage3.php"
+	)
+);?>
 				</div>
 			</div>
 		</div>
 	</div>
-
-		<?$APPLICATION->IncludeComponent(
-	"bitrix:news.line", 
-	"new_properties", 
-	array(
+	 <?$APPLICATION->IncludeComponent(
+	"bitrix:news.line",
+	"new_properties",
+	Array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"CACHE_GROUPS" => "N",
 		"CACHE_TIME" => "",
 		"CACHE_TYPE" => "N",
 		"COMPONENT_TEMPLATE" => "new_properties",
 		"DETAIL_URL" => "#SITE_DIR##IBLOCK_CODE#/#CODE#/",
-		"FIELD_CODE" => array(
-			0 => "ID",
-			1 => "NAME",
-			2 => "PREVIEW_TEXT",
-			3 => "PREVIEW_PICTURE",
-			4 => "PROPERTY_AREA",
-			5 => "PROPERTY_FLOORS",
-			6 => "PROPERTY_BATHROOMS",
-			7 => "PROPERTY_GARAGE",
-			8 => "PROPERTY_PRICE",
-			9 => "",
-		),
-		"IBLOCKS" => array(
-			0 => "5",
-		),
+		"FIELD_CODE" => array(0=>"ID",1=>"NAME",2=>"PREVIEW_TEXT",3=>"PREVIEW_PICTURE",4=>"PROPERTY_AREA",5=>"PROPERTY_FLOORS",6=>"PROPERTY_BATHROOMS",7=>"PROPERTY_GARAGE",8=>"PROPERTY_PRICE",9=>"",),
+		"IBLOCKS" => array(0=>"5",),
 		"IBLOCK_TYPE" => "Ads",
 		"NEWS_COUNT" => "9",
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_BY2" => "NAME",
 		"SORT_ORDER1" => "DESC",
 		"SORT_ORDER2" => "DESC"
-	),
-	false
-);?>   
-
- 
-		<?  
-		$APPLICATION->IncludeComponent("bitrix:news.line", "services", Array(
-	"ACTIVE_DATE_FORMAT" => "d.m.Y",	// Формат показа даты
-		"CACHE_GROUPS" => "N",	// Учитывать права доступа
-		"CACHE_TIME" => "3600000",	// Время кеширования (сек.)
-		"CACHE_TYPE" => "A",	// Тип кеширования
+	)
+);?> <?$APPLICATION->IncludeComponent(
+	"bitrix:news.line",
+	"services",
+	Array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"CACHE_GROUPS" => "N",
+		"CACHE_TIME" => "3600000",
+		"CACHE_TYPE" => "A",
 		"COMPONENT_TEMPLATE" => ".default",
-		"DETAIL_URL" => "",	// URL, ведущий на страницу с содержимым элемента раздела
-		"FIELD_CODE" => array(	// Поля
-			0 => "PROPERTY_LINK",
-			1 => "NAME",
-		),
-		"IBLOCKS" => array(	// Код информационного блока
-			0 => "6",
-		),
-		"IBLOCK_TYPE" => "services",	// Тип информационного блока
-		"NEWS_COUNT" => "6",	// Количество новостей на странице
-		"SORT_BY1" => "ACTIVE_FROM",	// Поле для первой сортировки новостей
-		"SORT_BY2" => "NAME",	// Поле для второй сортировки новостей
-		"SORT_ORDER1" => "DESC",	// Направление для первой сортировки новостей
-		"SORT_ORDER2" => "DESC",	// Направление для второй сортировки новостей
-	),
-	false
-);
-?> 
-		<?  
-		$APPLICATION->IncludeComponent(
-	"bitrix:news.line", 
-	"our_blog", 
-	array(
+		"DETAIL_URL" => "",
+		"FIELD_CODE" => array(0=>"PROPERTY_LINK",1=>"NAME",),
+		"IBLOCKS" => array(0=>"6",),
+		"IBLOCK_TYPE" => "services",
+		"NEWS_COUNT" => "6",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "NAME",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "DESC"
+	)
+);?> <?$APPLICATION->IncludeComponent(
+	"bitrix:news.line",
+	"our_blog",
+	Array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"CACHE_GROUPS" => "N",
 		"CACHE_TIME" => "60480",
 		"CACHE_TYPE" => "A",
 		"COMPONENT_TEMPLATE" => "our_blog",
 		"DETAIL_URL" => "#SITE_DIR#/about-the-service/news/#CODE#/",
-		"FIELD_CODE" => array(
-			0 => "NAME",
-			1 => "PREVIEW_TEXT",
-			2 => "PREVIEW_PICTURE",
-			3 => "DATE_ACTIVE_FROM",
-			4 => "",
-		),
-		"IBLOCKS" => array(
-			0 => "1",
-		),
+		"FIELD_CODE" => array(0=>"NAME",1=>"PREVIEW_TEXT",2=>"PREVIEW_PICTURE",3=>"DATE_ACTIVE_FROM",4=>"",),
+		"IBLOCKS" => array(0=>"1",),
 		"IBLOCK_TYPE" => "news",
 		"NEWS_COUNT" => "3",
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_BY2" => "NAME",
 		"SORT_ORDER1" => "DESC",
 		"SORT_ORDER2" => "DESC"
-	),
-	false
-);
-?> 
-
-<p>
-	<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
-</p>
+	)
+);?>
+	<p>
+		 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+	</p>
+</div>
