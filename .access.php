@@ -1,4 +1,13 @@
 <?
+$PERM["sellers-personal-account"]["G6"]="D";
+$PERM["sellers-personal-account"]["G5"]="X";
+$PERM["sellers-personal-account"]["*"]="D";
+$PERM["sellers-personal-account"]["G7"]="W";
+$PERM["sellers-personal-account"]["G1"]="X";
+$PERM["buyers-personal-account"]["*"]="D";
+$PERM["buyers-personal-account"]["G1"]="X";
+$PERM["buyers-personal-account"]["G6"]="W";
+$PERM["buyers-personal-account"]["G5"]="X";
 $PERM["bitrix"]["8"]="D";
 $PERM["search"]["5"]="W";
 $PERM["products"]["5"]="W";

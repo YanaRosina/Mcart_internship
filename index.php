@@ -22,7 +22,7 @@ $APPLICATION->SetPageProperty("NOT_SHOW_NAV_CHAIN", "Y");
 		"CACHE_TIME" => "604800",
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
-		"DETAIL_URL" => "",
+		"DETAIL_URL" => "#SITE_DIR##IBLOCK_CODE#/#CODE#/",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_DATE" => "Y",
 		"DISPLAY_NAME" => "Y",
@@ -30,10 +30,9 @@ $APPLICATION->SetPageProperty("NOT_SHOW_NAV_CHAIN", "Y");
 		"DISPLAY_PREVIEW_TEXT" => "Y",
 		"DISPLAY_TOP_PAGER" => "N",
 		"FIELD_CODE" => array(
-			0 => "",
-			1 => "PREVIEW_TEXT",
-			2 => "DETAIL_PICTURE",
-			3 => "",
+			0 => "PREVIEW_TEXT",
+			1 => "DETAIL_PICTURE",
+			2 => "",
 		),
 		"FILTER_NAME" => "arrFilter",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
@@ -120,24 +119,37 @@ $APPLICATION->SetPageProperty("NOT_SHOW_NAV_CHAIN", "Y");
 		</div>
 	</div>
 	 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.line",
-	"new_properties",
-	Array(
+	"bitrix:news.line", 
+	"new_properties", 
+	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"CACHE_GROUPS" => "N",
 		"CACHE_TIME" => "",
 		"CACHE_TYPE" => "N",
 		"COMPONENT_TEMPLATE" => "new_properties",
 		"DETAIL_URL" => "#SITE_DIR##IBLOCK_CODE#/#CODE#/",
-		"FIELD_CODE" => array(0=>"ID",1=>"NAME",2=>"PREVIEW_TEXT",3=>"PREVIEW_PICTURE",4=>"PROPERTY_AREA",5=>"PROPERTY_FLOORS",6=>"PROPERTY_BATHROOMS",7=>"PROPERTY_GARAGE",8=>"PROPERTY_PRICE",9=>"",),
-		"IBLOCKS" => array(0=>"5",),
+		"FIELD_CODE" => array(
+			0 => "ID",
+			1 => "NAME",
+			2 => "PREVIEW_TEXT",
+			3 => "PREVIEW_PICTURE",
+			4 => "PROPERTY_AREA",
+			5 => "PROPERTY_FLOORS",
+			6 => "PROPERTY_BATHROOMS",
+			7 => "PROPERTY_PRICE",
+			8 => "PROPERTY_GARAGE",
+		),
+		"IBLOCKS" => array(
+			0 => "5",
+		),
 		"IBLOCK_TYPE" => "Ads",
 		"NEWS_COUNT" => "9",
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_BY2" => "NAME",
 		"SORT_ORDER1" => "DESC",
 		"SORT_ORDER2" => "DESC"
-	)
+	),
+	false
 );?> <?$APPLICATION->IncludeComponent(
 	"bitrix:news.line",
 	"services",
