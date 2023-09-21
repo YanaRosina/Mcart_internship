@@ -3,7 +3,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("title", "Биржа недвижимости");
 $APPLICATION->SetTitle("Биржа недвижимости");
 ?><div>
-	 <?$GLOBALS['arrFilter'] = array("=PROPERTY_PRIORITY_VALUE"=> "YES");
+	 <?$GLOBALS['arrFilter'] = array("PROPERTY_PRIORITY_VALUE"=> "YES");
 	
 	$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 

@@ -12,6 +12,7 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+ <?if($APPLICATION->GetCurPage() == "/ads/"){?>
 <div class="pt-5">
       <div class="container">
         <form class="row">
@@ -100,20 +101,27 @@ $this->setFrameMode(true);
           </div>
           <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
             <input type="submit" class="btn btn-primary btn-block form-control-same-height rounded-0" value="Search">
-          </div>
-          
+          </div> 
         </form>
-
-        
       </div>
     </div>
-
+<? }?>
 <div class="site-section site-section-sm bg-light">
 <div class="container">
 			<div class="row mb-5">
 				<div class="col-12">
 					<div class="site-section-title">
+
+          
+          <?if($APPLICATION->GetCurPage() == "/ads/"){?>
 						<h2><?=GetMessage("NEW_PROPERTIES_TITLE")?></h2>
+            <? }
+            elseif($APPLICATION->GetCurPage() == "/sellers-personal-account/my-ads/"){?> 
+              <h2><?=GetMessage("MY_ADS_TITLE")?></h2>  
+            <? }
+            else{?>   
+              <h2><?=GetMessage("DEFAULT_ADS_TITLE")?></h2> 
+              <? }?>
 					</div>
 				</div>
 			</div>
