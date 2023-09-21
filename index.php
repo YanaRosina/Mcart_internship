@@ -2,7 +2,6 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("title", "Биржа недвижимости");
 $APPLICATION->SetTitle("Биржа недвижимости");
-$APPLICATION->SetPageProperty("NOT_SHOW_NAV_CHAIN", "Y");
 ?><div>
 	 <?$GLOBALS['arrFilter'] = array("=PROPERTY_PRIORITY_VALUE"=> "YES");
 	
