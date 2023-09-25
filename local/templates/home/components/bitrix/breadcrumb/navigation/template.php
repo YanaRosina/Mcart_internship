@@ -21,7 +21,7 @@ $strReturn .= '<div class="site-blocks-cover inner-page-cover overlay" style="ba
 	  <div>';
 
 $itemSize = count($arResult);
-for($index = 0; $index < $itemSize-1; $index++)
+for($index = 0; $index < $itemSize; $index++)
 {
 	$title = htmlspecialcharsex($arResult[$index]["TITLE"]);
 	$arrow = ($index > 0? '<span class="mx-2 text-white">&bullet;</span>' : '');

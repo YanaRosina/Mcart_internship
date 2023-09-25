@@ -87,7 +87,9 @@
               );?>
             </p>
           </div>
-          <div class="col-6 col-md-6 text-right">
+         
+            <div class="col-6 col-md-6 text-right">
+            <a class="mt-0" style="margin-right: 30px; font-size: 16px;" href="/user/"><strong>Войти</strong></a>
               <?$APPLICATION->IncludeComponent(
                 "bitrix:main.include", 
                 "", 
@@ -153,16 +155,16 @@
     </div>
     <?if($APPLICATION->GetCurPage() != "/"){?>
          <? $APPLICATION->IncludeComponent(
-            "bitrix:breadcrumb", 
-            "navigation", 
-            array(
-              "PATH" => "",
-              "SITE_ID" => "s1",
-              "START_FROM" => "0",
-              "COMPONENT_TEMPLATE" => "navigation"
-            ),
-            false
-          );?>
+	"bitrix:breadcrumb", 
+	"navigation", 
+	array(
+		"PATH" => "",
+		"SITE_ID" => "s1",
+		"START_FROM" => "0",
+		"COMPONENT_TEMPLATE" => "navigation"
+	),
+	false
+);?>
 
    <? }?>
 
