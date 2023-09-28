@@ -41,7 +41,7 @@
 
 <body>
     <?$APPLICATION->ShowPanel();?>
-  <div class="site-loader"></div>  
+  <!-- <div class="site-loader"></div>   -->
 
   <div class="site-wrap">
 

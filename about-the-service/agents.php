@@ -1,7 +1,8 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Агенты");
-?><?$APPLICATION->IncludeComponent(
+?><div>
+	 <?$APPLICATION->IncludeComponent(
 	"bitrix:menu",
 	"",
 	Array(
@@ -16,4 +17,20 @@ $APPLICATION->SetTitle("Агенты");
 		"ROOT_MENU_TYPE" => "left",
 		"USE_EXT" => "N"
 	)
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?>
+</div>
+<div class="site-section site-section-sm bg-light">
+	<div class="container agents-list">
+		 <?$APPLICATION->IncludeComponent(
+	"mcart:agents.list",
+	"",
+	Array(
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"HLBLOCK_TNAME" => "agents",
+		"ITEMS_COUNT" => "2"
+	)
+);?>
+	</div>
+</div>
+ <br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

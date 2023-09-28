@@ -1,0 +1,3 @@
+<?php
+$MESS["MCART_AGENTS_LIST_MODULE_NOT_INSTALLED"] = "Module #MODULE# not installed.";
+$MESS["MCART_AGENTS_LIST_NOT_HLBLOCK_TNAME"] = "Enter TABLE_NAME Highload-blok";
