@@ -1,8 +1,8 @@
 BX.ready(function() {
 
     const agentStars = document.querySelectorAll('.star');
-    agentStars.forEach((star)=>{
-        BX.bind(star, "click", clickStar); 
+    agentStars.forEach((st)=>{
+        BX.bind(st, "click", clickStar); 
     });
     /*
     1. Спомощью document.querySelectorAll получить все DOM-элементы с классом star
@@ -18,7 +18,11 @@ function clickStar(event) {
     cо значением ID элемента Агента
     (https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset)
      */
-    const agentID =event.currentTarget.dataset.id;
+
+    const elem = event.currentTarget;
+    
+    const agentID = elem.dataset.id;
+
 
     if (agentID) { // если ID есть, то делаем ajax-запрос
         BX.ajax // https://dev.1c-bitrix.ru/api_help/js_lib/ajax/bx_ajax_runcomponentaction.php
@@ -37,7 +41,7 @@ function clickStar(event) {
                     console.log(response); // консоле можно будет увидеть ответ от бэка, для разработки в конечном коде лучше убрать
                     let data = response.data;
                     if (data['action'] == 'success') {
-                       event.currentTarget.classList.toggle("active");
+                        elem.classList.toggle("active");
                         // Отобразить пользоватиелю, что агент добавлен в избраное (желтая звездочка, есть в верстке)
                     }
 
